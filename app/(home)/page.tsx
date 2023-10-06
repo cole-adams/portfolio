@@ -1,18 +1,22 @@
-import Text from "@/common/components/Text/ContentfulText";
-import { PageEntry } from "@/common/models/contentful";
-import { createClient } from "contentful";
+import Text from "@/app/common/components/Text/ContentfulText";
+import {
+  ComponentFieldsSkeleton,
+  TextEntry,
+} from "@/app/common/models/contentful";
+import { getEntry } from "../common/services/contentful";
 
 export default async function Home() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID as string,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY as string,
-  });
-
-  const homePage = await client.getEntry<PageEntry>("1yC6QGZkdp48HTb2SFKkeD");
+  const homePage = await getEntry<ComponentFieldsSkeleton>(
+    "1yC6QGZkdp48HTb2SFKkeD"
+  );
+  homePage.fields.content[0];
   return (
     <main className="flex flex-col items-center justify-center h-full">
-      <Text className="text-primary" entry={homePage.fields.content[0]}></Text>
-      <Text entry={homePage.fields.content[1]}></Text>
+      <Text
+        className="text-primary text-center"
+        entry={homePage.fields.content[0] as TextEntry}
+      ></Text>
+      <Text entry={homePage.fields.content[1] as TextEntry}></Text>
     </main>
   );
 }

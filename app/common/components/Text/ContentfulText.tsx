@@ -1,10 +1,10 @@
 import { PropsWithChildren } from "react";
 import Title from "./Title";
 import H1 from "./H1";
-import { TextEntry } from "@/common/models/contentful";
+import { TextEntry } from "@/app/common/models/contentful";
 
 interface Props {
-  entry: TextEntry;
+  entry?: TextEntry;
   className?: string;
 }
 
@@ -18,6 +18,7 @@ const tagComponentMap: Record<string, TextRenderer> = {
 };
 
 export default function Text({ entry, className }: Props) {
+  if (!entry) return <></>;
   const Component = tagComponentMap[entry.fields.tag ?? "P"];
   const content =
     entry.fields.textFormat === "Short"
