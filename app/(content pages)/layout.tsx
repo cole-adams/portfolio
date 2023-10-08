@@ -6,9 +6,9 @@ export default function HomeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-full flex-col md:flex-row">
-      {children}
+    <div className="flex h-full flex-col-reverse md:flex-row">
       <Navigation />
+      {children}
     </div>
   );
 }
