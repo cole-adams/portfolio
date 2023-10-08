@@ -12,7 +12,7 @@ interface Props {
 export default function AppLink({
   entry,
   className,
-  iconStyle = "w-4 h-4",
+  iconStyle = "relative w-4 h-4",
 }: Props) {
   const icon = entry.fields.icon as Asset<undefined, string>;
   return (
@@ -30,6 +30,7 @@ export default function AppLink({
           />
         </span>
       )}
+      <span>{entry.fields.label}</span>
     </Link>
   );
 }

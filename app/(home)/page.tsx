@@ -11,7 +11,7 @@ export default async function Home() {
   );
   homePage.fields.content[0];
   return (
-    <main className="flex flex-col items-center justify-center h-full">
+    <main className="grow flex flex-col items-center justify-center h-full">
       <Text
         className="text-primary text-center"
         entry={homePage.fields.content[0] as TextEntry}
