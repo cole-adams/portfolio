@@ -37,3 +37,14 @@ export interface LinkFields {
 
 export type LinkFieldsSkeleton = EntrySkeleton<LinkFields>;
 export type LinkEntry = Entry<LinkFieldsSkeleton, undefined>;
+
+export interface ImageFields {
+  title: EntryFieldTypes.Text;
+  asset: EntryFieldTypes.AssetLink;
+}
+
+export type ImageFieldsSkeleton = EntrySkeleton<ImageFields>;
+export type ImageEntry = Entry<
+  ImageFieldsSkeleton,
+  "WITHOUT_UNRESOLVABLE_LINKS"
+>;

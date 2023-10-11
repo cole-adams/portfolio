@@ -1,22 +1,9 @@
-import Text from "@/app/common/components/Text/ContentfulText";
-import {
-  ComponentFieldsSkeleton,
-  TextEntry,
-} from "@/app/common/models/contentful";
-import { getEntry } from "../../common/services/contentful";
+import AboutTile from "./AboutTile";
 
-export default async function Home() {
-  const homePage = await getEntry<ComponentFieldsSkeleton>(
-    "1yC6QGZkdp48HTb2SFKkeD"
-  );
-  homePage.fields.content[0];
+export default async function About() {
   return (
-    <main className="grow flex flex-col items-center justify-center h-full">
-      <Text
-        className="text-primary text-center"
-        entry={homePage.fields.content[0] as TextEntry}
-      ></Text>
-      <Text entry={homePage.fields.content[1] as TextEntry}></Text>
+    <main className="flex flex-col items-center h-full md:p-20 p-4 pt-20 overflow-x-auto">
+      <AboutTile />
     </main>
   );
 }
