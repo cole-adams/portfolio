@@ -5,5 +5,5 @@ interface Props {
 }
 
 export default function P({ className, children }: PropsWithChildren<Props>) {
-  return <p className={`${className ?? ""} text-base`}>{children}</p>;
+  return <p className={`${className ?? ""} text-lg`}>{children}</p>;
 }
