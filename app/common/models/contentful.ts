@@ -48,3 +48,15 @@ export type ImageEntry = Entry<
   ImageFieldsSkeleton,
   "WITHOUT_UNRESOLVABLE_LINKS"
 >;
+
+export interface SkillFields {
+  title: EntryFieldTypes.Text;
+  icon: EntryFieldTypes.AssetLink;
+  colour: EntryFieldTypes.Text;
+}
+
+export type SkillFieldsSkeleton = EntrySkeleton<SkillFields>;
+export type SkillEntry = Entry<
+  SkillFieldsSkeleton,
+  "WITHOUT_UNRESOLVABLE_LINKS"
+>;
