@@ -6,5 +6,5 @@ const client = createClient({
 });
 
 export async function getEntry<T extends EntrySkeletonType>(entryId: string) {
-  return client.withoutUnresolvableLinks.getEntry<T>(entryId);
+  return client.withoutUnresolvableLinks.getEntry<T>(entryId, { include: 3 });
 }

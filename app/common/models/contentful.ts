@@ -60,3 +60,20 @@ export type SkillEntry = Entry<
   SkillFieldsSkeleton,
   "WITHOUT_UNRESOLVABLE_LINKS"
 >;
+
+export interface ExperienceFields {
+  title: EntryFieldTypes.Text;
+  jobTitle: EntryFieldTypes.Text;
+  company: EntryFieldTypes.Text;
+  dateRange: EntryFieldTypes.Text;
+  description: EntryFieldTypes.Text;
+  location: EntryFieldTypes.Text;
+  logo: EntryFieldTypes.AssetLink;
+  skills: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<SkillFieldsSkeleton>>;
+}
+
+export type ExperienceFieldsSkeleton = EntrySkeleton<ExperienceFields>;
+export type ExperienceEntry = Entry<
+  ExperienceFieldsSkeleton,
+  "WITHOUT_UNRESOLVABLE_LINKS"
+>;
