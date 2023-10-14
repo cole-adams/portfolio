@@ -77,3 +77,18 @@ export type ExperienceEntry = Entry<
   ExperienceFieldsSkeleton,
   "WITHOUT_UNRESOLVABLE_LINKS"
 >;
+
+export interface ProjectFields {
+  title: EntryFieldTypes.Text;
+  description: EntryFieldTypes.Text;
+  skills: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<SkillFieldsSkeleton>>;
+  repoLink?: EntryFieldTypes.EntryLink<LinkFieldsSkeleton>;
+  projectLink?: EntryFieldTypes.EntryLink<LinkFieldsSkeleton>;
+  images: EntryFieldTypes.Array<EntryFieldTypes.AssetLink>;
+}
+
+export type ProjectFieldsSkeleton = EntrySkeleton<ProjectFields>;
+export type ProjectEntry = Entry<
+  ProjectFieldsSkeleton,
+  "WITHOUT_UNRESOLVABLE_LINKS"
+>;
