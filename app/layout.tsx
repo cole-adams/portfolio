@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Akshar } from "next/font/google";
 import SocialsBar from "./common/components/SocialsBar";
+import ClientAnimatePresence from "./common/components/ClientAnimatePresence";
 
 const akshar = Akshar({ subsets: ["latin"] });
 
@@ -19,7 +20,7 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className={`${akshar.className} bg-background h-full`}>
         <SocialsBar />
-        {children}
+        <ClientAnimatePresence>{children}</ClientAnimatePresence>
       </body>
     </html>
   );

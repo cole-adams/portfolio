@@ -1,4 +1,5 @@
 import Navigation from "../common/components/Navigation/Navigation";
+import PageWrapper from "../common/components/PageWrapper";
 
 export default function HomeLayout({
   children,
@@ -7,7 +8,7 @@ export default function HomeLayout({
 }) {
   return (
     <div className="flex h-full flex-col md:flex-row">
-      {children}
+      <PageWrapper className=" flex-grow">{children}</PageWrapper>
       <Navigation />
     </div>
   );
