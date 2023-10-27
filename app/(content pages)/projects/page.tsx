@@ -10,6 +10,7 @@ import P from "@/app/common/components/Text/P";
 import SkillChip from "@/app/common/components/SkillChip";
 import Image from "next/image";
 import AppLink from "@/app/common/components/Link";
+import ContentPageWrapper from "../ContentPageWrapper";
 
 export default async function Experience() {
   const projectsPage = await getEntry<ComponentFieldsSkeleton>(
@@ -18,7 +19,7 @@ export default async function Experience() {
 
   const projects = projectsPage.fields.content as ProjectEntry[];
   return (
-    <div className="">
+    <ContentPageWrapper key="projects">
       {projects.map((project) => (
         <Card key={project.sys.id} className="w-full">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-8">
@@ -59,6 +60,6 @@ export default async function Experience() {
           </div>
         </Card>
       ))}
-    </div>
+    </ContentPageWrapper>
   );
 }

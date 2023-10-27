@@ -9,6 +9,7 @@ import Image from "next/image";
 import H3 from "@/app/common/components/Text/H3";
 import mapMarker from "@/public/map-marker.svg";
 import SkillChip from "@/app/common/components/SkillChip";
+import ContentPageWrapper from "../ContentPageWrapper";
 
 export default async function Experience() {
   const experiencePage = await getEntry<ComponentFieldsSkeleton>(
@@ -17,7 +18,10 @@ export default async function Experience() {
 
   const experiences = experiencePage.fields.content as ExperienceEntry[];
   return (
-    <div className="grid lg:grid-cols-2 grid-cols-1 gap-8">
+    <ContentPageWrapper
+      key="experience"
+      className="grid lg:grid-cols-2 grid-cols-1 gap-8"
+    >
       {experiences.map((experience) => (
         <Card key={experience.sys.id} className="">
           <div className="flex items-center justify-between gap-4 mb-2">
@@ -57,6 +61,6 @@ export default async function Experience() {
           <P>{experience.fields.description}</P>
         </Card>
       ))}
-    </div>
+    </ContentPageWrapper>
   );
 }
