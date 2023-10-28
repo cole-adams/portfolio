@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Akshar } from "next/font/google";
 import SocialsBar from "./common/components/SocialsBar";
 import ClientAnimatePresence from "./common/components/ClientAnimatePresence";
+import Body from "./common/components/Body";
 
 const akshar = Akshar({ subsets: ["latin"] });
 
@@ -18,10 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <body className={`${akshar.className} bg-background h-full`}>
+      <Body className={`${akshar.className} bg-background h-full`}>
         <SocialsBar />
         <ClientAnimatePresence>{children}</ClientAnimatePresence>
-      </body>
+      </Body>
     </html>
   );
 }

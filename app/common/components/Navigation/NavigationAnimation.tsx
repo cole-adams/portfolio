@@ -8,7 +8,7 @@ export default function NavigationAnimation({
   children: ReactNode;
 }) {
   return (
-    <motion.div className="h-full z-10" layoutId="nav" layout>
+    <motion.div className="md:h-full z-10" layoutId="nav" layout>
       {children}
     </motion.div>
   );

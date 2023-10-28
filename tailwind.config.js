@@ -12,6 +12,10 @@ module.exports = {
         background: "#3A3442",
         nav: "#28272A",
       },
+      boxShadow: {
+        primaryHover: "0px 0px 20px 10px rgb(143, 67, 238, 0.5)",
+        cursor: "0px 0px 40px 40px #8F43EE",
+      },
     },
   },
   plugins: [],

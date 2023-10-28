@@ -10,7 +10,7 @@ export default async function Navigation() {
   );
   return (
     <NavigationAnimation>
-      <nav className="h-full flex md:flex-col justify-around md:justify-normal md:gap-6 shrink-0 w-full md:w-[260px] bg-nav md:pt-24">
+      <nav className="md:h-full flex md:flex-col justify-around md:justify-normal md:gap-6 shrink-0 w-full md:w-[260px] bg-nav md:pt-24 hover:shadow-primaryHover transition-shadow">
         {navigationContent.fields.content.map((link) => (
           <NavLink key={link?.sys.id} entry={link as LinkEntry} />
         ))}
