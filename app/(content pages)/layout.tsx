@@ -9,10 +9,8 @@ export default function HomeLayout({
   return (
     <div className="flex h-full flex-col-reverse md:flex-row">
       <Navigation />
-      <PageWrapper>
-        <main className="h-full md:p-20 p-4 pt-20 overflow-x-auto">
-          {children}
-        </main>
+      <PageWrapper className="h-full md:p-20 p-4 pt-20 overflow-x-auto">
+        {children}
       </PageWrapper>
     </div>
   );

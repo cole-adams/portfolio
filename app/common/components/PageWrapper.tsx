@@ -11,13 +11,13 @@ export default function PageWrapper({
   className?: string;
 }) {
   return (
-    <motion.div
+    <motion.main
       className={className}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { delay: 0.1 } }}
       exit={{ opacity: 0 }}
     >
       {children}
-    </motion.div>
+    </motion.main>
   );
 }
