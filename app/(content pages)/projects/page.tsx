@@ -19,11 +19,17 @@ export default async function Experience() {
 
   const projects = projectsPage.fields.content as ProjectEntry[];
   return (
-    <ContentPageWrapper key="projects">
+    <ContentPageWrapper
+      key="projects"
+      className="grid lg:grid-cols-2 grid-cols-1 gap-8"
+    >
       {projects.map((project) => (
-        <Card key={project.sys.id} className="w-full">
-          <div className="flex flex-col-reverse lg:flex-row items-center gap-8">
-            <div>
+        <Card
+          key={project.sys.id}
+          className="w-full flex flex-col justify-between"
+        >
+          <div className="flex flex-col-reverse items-center gap-8 mb-4">
+            <div className="self-start">
               <H2 className="mb-2">{project.fields.title}</H2>
               <div className="flex flex-wrap gap-2 mb-2">
                 {project.fields.skills.map((skill) => (

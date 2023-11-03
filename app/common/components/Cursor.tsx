@@ -4,6 +4,7 @@ import useMouse from "@react-hook/mouse-position";
 import { motion } from "framer-motion";
 import { MutableRefObject, useRef } from "react";
 import { useBreakpoint } from "../services/breakpoints";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 export default function Cursor({
   mouseRef,
@@ -19,15 +20,14 @@ export default function Cursor({
   const prevMouseY = useRef(0);
 
   const { md } = useBreakpoint("md");
+
+  const { width, height } = useWindowDimensions();
   const mousePositionX = md
     ? mouse.clientX ?? prevMouseX.current
-    : window.innerWidth / 2 - 128;
+    : width / 2 - 128;
   const mousePositionY = md
     ? mouse.clientY ?? prevMouseY.current
-    : window.innerHeight / 2 - 160;
-
-  console.log(mousePositionX);
-  console.log(mousePositionY);
+    : height / 2 - 160;
 
   prevMouseX.current = mousePositionX;
   prevMouseY.current = mousePositionY;
