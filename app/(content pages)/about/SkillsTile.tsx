@@ -9,8 +9,6 @@ import { getEntry } from "@/app/common/services/contentful";
 import Image from "next/image";
 import PLarge from "@/app/common/components/Text/PLarge";
 
-export { revalidate } from "@/app/common/services/contentful";
-
 export default async function SkillsTile() {
   const skillsPage = await getEntry<ComponentFieldsSkeleton>(
     "5XaI1BwPyDKFazJOvBLv2m"

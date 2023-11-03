@@ -1,6 +1,6 @@
 import { EntrySkeletonType, createClient } from "contentful";
 
-export const revalidate = 3600;
+export const revalidate = 900;
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID as string,
