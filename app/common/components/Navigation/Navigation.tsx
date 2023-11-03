@@ -4,6 +4,8 @@ import AppLink from "../Link";
 import NavLink from "./NavLink";
 import NavigationAnimation from "./NavigationAnimation";
 
+export { revalidate } from "@/app/common/services/contentful";
+
 export default async function Navigation() {
   const navigationContent = await getEntry<ComponentFieldsSkeleton>(
     "4K6OANnSNSvLw6nOH4aE0S"

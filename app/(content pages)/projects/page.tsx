@@ -12,6 +12,8 @@ import Image from "next/image";
 import AppLink from "@/app/common/components/Link";
 import ContentPageWrapper from "../ContentPageWrapper";
 
+export { revalidate } from "@/app/common/services/contentful";
+
 export default async function Experience() {
   const projectsPage = await getEntry<ComponentFieldsSkeleton>(
     "4he3IuYzYqU9gF75zoHHAQ"

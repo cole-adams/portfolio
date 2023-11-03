@@ -2,6 +2,8 @@ import { ComponentFieldsSkeleton, LinkEntry } from "../models/contentful";
 import { getEntry } from "../services/contentful";
 import AppLink from "./Link";
 
+export { revalidate } from "@/app/common/services/contentful";
+
 export default async function SocialsBar() {
   const socialsBarContent = await getEntry<ComponentFieldsSkeleton>(
     "7kwK0Jw91WK5yn48FruMNq"

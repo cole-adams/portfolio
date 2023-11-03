@@ -8,6 +8,8 @@ import {
 import { getEntry } from "@/app/common/services/contentful";
 import Image from "next/image";
 
+export { revalidate } from "@/app/common/services/contentful";
+
 export default async function AboutTile() {
   const aboutPage = await getEntry<ComponentFieldsSkeleton>(
     "62rUdB7hR8ezuU7nM01SZu"

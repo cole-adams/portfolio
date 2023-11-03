@@ -11,6 +11,8 @@ import mapMarker from "@/public/map-marker.svg";
 import SkillChip from "@/app/common/components/SkillChip";
 import ContentPageWrapper from "../ContentPageWrapper";
 
+export { revalidate } from "@/app/common/services/contentful";
+
 export default async function Experience() {
   const experiencePage = await getEntry<ComponentFieldsSkeleton>(
     "3F9ZcgBRxQAtSWoXOCorcb"
