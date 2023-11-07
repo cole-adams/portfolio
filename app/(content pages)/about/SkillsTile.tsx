@@ -19,7 +19,7 @@ export default async function SkillsTile() {
   return (
     <Card className="w-full">
       <Text entry={title} className="mb-6 text-center md:text-left" />
-      <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+      <div className="flex flex-wrap md:gap-4 gap-2 justify-center md:justify-start">
         {skills.map((skill) => (
           <div
             key={skill.sys.id}
@@ -29,10 +29,11 @@ export default async function SkillsTile() {
             <Image
               src={`https:${skill.fields.icon?.fields.file?.url ?? ""}`}
               alt={skill.fields.title}
+              className="mt-auto"
               width={64}
               height={64}
             />
-            <PLarge>{skill.fields.title}</PLarge>
+            <PLarge className="mt-auto mb-1">{skill.fields.title}</PLarge>
           </div>
         ))}
       </div>
