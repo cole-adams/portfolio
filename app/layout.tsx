@@ -8,8 +8,8 @@ import Body from "./common/components/Body";
 const akshar = Akshar({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Cole Adams",
-  description: "Cole Adams portfolio site",
+  title: "Cole Adams | Web developer",
+  description: "Cole Adams portfolio",
 };
 
 export default function RootLayout({
